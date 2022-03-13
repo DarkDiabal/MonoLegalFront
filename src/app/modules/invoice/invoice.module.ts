@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     MaterialModule,
+    HttpClientModule,
     InvoiceRoutingModule,
     NgxSpinnerModule
   ],

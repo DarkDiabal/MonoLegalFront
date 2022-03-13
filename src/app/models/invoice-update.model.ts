@@ -11,8 +11,6 @@ export class InvoiceListModel{
     public retention:number;
     public createdAt:string;
     public status:string;
-    public statusName:string;
     public paid:boolean;
-    public paidText:string;
     public paidAt:string;
 }

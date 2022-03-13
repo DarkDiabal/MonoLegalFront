@@ -19,4 +19,9 @@ export class InvoiceService {
     return this.http.get(urlApi);
   }
 
+  updateInvoice(model){
+    const urlApi = `${environment.urlWebApi}Invoice`;
+    return this.http.put(urlApi, model);
+  }
+
 }

@@ -9,6 +9,7 @@ import { MaterialModule } from './shared/material/material/material.module';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    HttpClientModule
   ],
   providers: [
     MaterialModule
