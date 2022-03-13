@@ -1,0 +1,64 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.menu{
+      width: 300px;
+}
+
+.image-profile{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius:50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.no-image-profile{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius:50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url(../../../../assets/images/account.svg);
+}
+
+.sidenav {
+  width: 250px;
+}
+  
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.link-menu{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+  
+.link-menu:hover{
+    background-color: #BEBEBE;
+}
+
+.container{
+    padding-top: 2%;
+    min-height: 88.5vh; 
+}
+
+.active-link{
+  background-color: #BEBEBE;
+}

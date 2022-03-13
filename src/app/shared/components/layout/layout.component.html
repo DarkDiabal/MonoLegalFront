@@ -1,0 +1,38 @@
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="true">
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="'side'"
+      [opened]="true"
+    >
+      <div >
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 center ">
+                <img class="no-image-profile" alt="">
+          </div>
+      </div>
+      <div class="center">
+      </div>
+      <mat-divider></mat-divider>
+        <div routerLink="/Home" routerLinkActive="active-link"  class="col-12 col-sm-12 col-md-12 col-lg-12 center link-menu">
+            <a>Home</a>
+        </div>
+        <mat-divider></mat-divider>
+        <div routerLink="/Invoice/List" routerLinkActive="active-link" class="col-12 col-sm-12 col-md-12 col-lg-12 center link-menu">
+            <a>Facturas </a>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+          </button>
+          <span>MonoLegal</span>
+        </mat-toolbar>
+      <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

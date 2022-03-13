@@ -1,0 +1,105 @@
+<ngx-spinner type="ball-scale-multiple"><p style="color: white" > Cargando... </p></ngx-spinner>
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 center">
+        <h1>Facturas</h1>
+    </div>
+</div>
+<div  class="row  table-container">  
+    <div class="col-cs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <table mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
+            <!-- actions -->
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef>
+                    <button mat-icon-button color="primary" routerLink="/Orders/Buy-Order-Create">
+                        <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+                    </button>
+                </th>
+                <td mat-cell *matCellDef="let row" class="actions">
+
+                    <button *ngIf="row.status.name != 'Recibido'" mat-icon-button style="color: red;" (click)="updateStatus(row)">
+                        <mat-icon>remove_circle_outline</mat-icon>
+                    </button>
+                </td>                    
+            </ng-container>   
+          
+            <!-- id -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+                <td mat-cell *matCellDef="let row; index as i" style="width:2%">{{ i+1}}</td>
+            </ng-container>
+
+            <ng-container  matColumnDef="invoiceCode">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo Factura</th>
+                <td mat-cell *matCellDef="let row" class ="">{{ row.sku }}</td>
+            </ng-container>
+           
+            <ng-container  matColumnDef="client">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+                <td mat-cell *matCellDef="let row" class ="">{{ row.name }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="clientEmail">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+                <td mat-cell *matCellDef="let row">{{ row.amount}}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="city">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Ciudad</th>
+                <td mat-cell *matCellDef="let row">{{ row.supplierName}}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="nit">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Nit</th>
+                <td mat-cell *matCellDef="let row">{{ row.buyPriceUnit | currency }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="invoiceTotal">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Total</th>
+                <td mat-cell *matCellDef="let row">{{ row.status.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="invoiceSubTotal">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Sub Total</th>
+                <td mat-cell *matCellDef="let row">{{ row.status.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="iva">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Iva</th>
+                <td mat-cell *matCellDef="let row">{{ row.status.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="retention">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Retención</th>
+                <td mat-cell *matCellDef="let row">{{ row.status.name }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="createdAt">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha de Creación</th>
+                <td mat-cell *matCellDef="let row">{{ row.createAt }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+                <td mat-cell *matCellDef="let row">{{ row.status.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="paid">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Pagada</th>
+                <td mat-cell *matCellDef="let row">{{ row.status.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="paidAt">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha de  Pago</th>
+                <td mat-cell *matCellDef="let row">{{ row.estimatedArrival }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            
+        </table>
+        <mat-paginator #paginator [pageIndex]="0" [pageSize]="25" [pageSizeOptions]="[10, 25, 50, 100, 250]"
+            showFirstLastButtons>
+        </mat-paginator>
+    </div>
+</div>

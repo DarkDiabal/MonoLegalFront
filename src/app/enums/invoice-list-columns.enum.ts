@@ -1,0 +1,16 @@
+export enum InvoiceListColumns {
+    actions = 'actions',
+    invoiceCode = 'invoiceCode',
+    client = 'client',
+    clientEmail = 'clientEmail',
+    city = 'city',
+    nit = 'nit',
+    invoiceTotal = 'invoiceTotal',
+    invoiceSubTotal = 'invoiceSubTotal',
+    iva = 'iva',
+    retention = 'retention',
+    createdAt = 'createdAt',
+    status = 'status',
+    paid = 'paid',
+    paidAt = 'paidAt',
+}
